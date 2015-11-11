@@ -1,21 +1,19 @@
-
 default: &default
   adapter: mysql2
   encoding: utf8
   pool: 5
   username: root
-  password: sm035489
+  password: <%= ENV['DEFAULT_URL'] %>
   socket: /var/run/mysqld/mysqld.sock
-
+  
 development:
   <<: *default
   database: ruffmailer_development
-
+  
 test:
   <<: *default
   database: ruffmailer_test
-
-
+  
 production:
   <<: *default
   database: ruffmailer_production
