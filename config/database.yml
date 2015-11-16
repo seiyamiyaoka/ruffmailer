@@ -3,7 +3,7 @@ default: &default
   encoding: utf8
   pool: 5
   username: root
-  password: <%= ENV['DEFAULT_URL'] %>
+  password: <%= ENV['DEFAULT_PASSWORD'] %>
   socket: /var/run/mysqld/mysqld.sock
   
 development:
