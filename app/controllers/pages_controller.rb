@@ -6,7 +6,7 @@ class PagesController < ApplicationController
   def create
     @page = Page.new(params_pages)
     @page.save
-    render :action 'new'
+   
   end
   
   private
