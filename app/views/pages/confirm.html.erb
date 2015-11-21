@@ -1,0 +1,30 @@
+<h1>確認</h1>
+<!--  送信フォーム-->
+<%= form_for (@page),url:page_path do |f| %>
+<ul>
+   <%= f.label :タイトル %>
+  <li><%= f.hidden_field :title %></li>
+  <p><%= @page.title %></p>
+  
+ <%= f.label :本文 %>
+  <li><%= f.hidden_field :content %></li>
+  <p><%= @page.content %></p> 
+  
+<%= f.label :メールアドレス %>
+  <li><%= f.hidden_field :email %></li>
+  <p><%= @page.email %></p>
+  
+  <li><%= f.submit "送信" %></li>
+</ul>
+<% end %>
+
+<!--  戻るよう-->
+<%= form_for (@page),url:{action: 'new'} do |f| %>
+
+  <%= f.hidden_field :title %>
+  <%= f.hidden_field :content %>
+  <%= f.hidden_field :email %>
+
+<%= f.submit "戻る", name:'back' %>
+
+<% end %>
