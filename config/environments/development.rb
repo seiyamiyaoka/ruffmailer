@@ -48,6 +48,6 @@ config.action_mailer.smtp_settings = {
   :domain => 'smtp.gmail.com',
    :authentication => 'plain',
    :user_name => 'seiyamiyaoka@gmail.com',
-  :password => 'nqtvpyqlbfdirzqd'  
+  :password => ENV['SMTP_PASSWORD']
 }
 end
