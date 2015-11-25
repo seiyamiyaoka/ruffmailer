@@ -1,4 +1,8 @@
+require 'net/https'
+require "uri"
 class PagesController < ApplicationController
+  
+  
   def new
     @page = Page.new
     if params[:back]
@@ -26,6 +30,13 @@ class PagesController < ApplicationController
     elsif 
        @page = Page.new(params_pages)
         Mailer.sendmail(@page).deliver #.deliverでメールを送信
+        
+#         #ここでjsonになる
+#         @pppp = @page.to_json
+#         uri = URI.parse("http://api/v1/:team/:note/pages")
+#         response = Net::HTTP.post_form(uri,@page)
+
+
             
       end
   end
