@@ -31,7 +31,7 @@ class PagesController < ApplicationController
        @page = Page.new(params_pages)
         Mailer.sendmail(@page).deliver #.deliverでメールを送信
         
-#         #ここでjsonになる
+#         #ここでjson
 #         @pppp = @page.to_json
 #         uri = URI.parse("http://api/v1/:team/:note/pages")
 #         response = Net::HTTP.post_form(uri,@page)
